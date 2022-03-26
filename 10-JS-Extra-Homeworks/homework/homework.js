@@ -18,6 +18,18 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  var obj={};
+  var acc=0;
+  for (let i = 0; i < string.length; i++) {
+    for (let j = 1; j <= string.length; j++) {
+      if(string[i]===string[j]){
+        obj[string[i]]=obj[string[i]]+1;
+      }else{
+        obj[string[i]]=1;
+      }
+    }
+  }
+  return obj;
 }
 
 
@@ -26,6 +38,16 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  var accMay=''; accMin='';
+  for (let i = 0; i < s.length; i++) {
+    if( s[i] === s[i].toUpperCase()){
+      accMay += s[i];
+    }else{
+      accMin += s[i];
+    }
+    
+  }
+  return accMay+accMin;
 }
 
 
@@ -43,6 +65,23 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  var num="a"+numero;
+  var numRev="a"+numero;
+  var centinela=0;
+  for (let i = 1; i <= num.length; i++) {
+    if(num[i]===num[(num.length-i)]){
+      centinela++;
+    }else{
+      centinela--;
+    }
+    
+  }
+  if(centinela>0){
+    return "Es capicua";
+  }else{
+    return "No es capicua";
+  }
+
 }
 
 
@@ -50,7 +89,18 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  var acc='';
+  for (let i = 0; i < cadena.length; i++) {
+    if(cadena[i]==='a'||cadena[i]==='b'||cadena[i]==='c'){
+      
+    }else{
+      acc+=cadena[i];
+    }
+    
+  }
+  return acc;
 }
+
 
 
 function sortArray(arr) {
